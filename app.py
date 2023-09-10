@@ -48,7 +48,7 @@ def process_request(message):
         else:
             return "No ha sido posible procesar su opinión, intente con una mejor descripción"
         '''
-        if classifier.predict(trans_new_doc)[0]:
+        if classifier.predict(trans_new_doc)[0] == "POSITIVE":
             return "Muchas gracias por sus buenas opiniones!"
         else:
             return "Muchas gracias por su opinión, intentaremos mejorar"
