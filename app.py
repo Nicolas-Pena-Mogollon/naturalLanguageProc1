@@ -40,12 +40,18 @@ def process_request(message):
         accuracy = classifier.predict_proba(trans_new_doc)
         # accuracy.max() obtiene el valor de la presición (probabilidad de pertenencia a una clase)
         # Al ser de testeo el valor es bajo
+        '''
         if classifier.predict(trans_new_doc)[0] == "POSITIVE" and accuracy.max() > 0.54:
             return "Muchas gracias por sus buenas opiniones!"
         elif accuracy.max() > 0.54:
             return "Muchas gracias por su opinión, intentaremos mejorar"
         else:
             return "No ha sido posible procesar su opinión, intente con una mejor descripción"
+        '''
+        if classifier.predict(trans_new_doc)[0]:
+            return "Muchas gracias por sus buenas opiniones!"
+        else:
+            return "Muchas gracias por su opinión, intentaremos mejorar"
 
     return "Tu opinión debe tener más de 20 caracteres."
 
