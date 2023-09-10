@@ -1,6 +1,6 @@
 import pickle
 
-from classifier.cineClassifier import fast_preproc
+from cineClassifier import fast_preproc
 
 with open("../files/vec.pkl", "rb") as archivo1:
     vec = pickle.load(archivo1)

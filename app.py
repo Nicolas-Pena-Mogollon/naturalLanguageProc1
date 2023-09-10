@@ -12,10 +12,10 @@ auth_token = '2868c62cde71d7a0ea5866a683587936'
 client = Client(account_sid, auth_token)
 
 app = Flask(__name__)
-with open("../files/vec.pkl", "rb") as archivo1:
+with open("./files/vec.pkl", "rb") as archivo1:
     vec = pickle.load(archivo1)
 
-with open("../files/classifier.pkl", "rb") as archivo2:
+with open("./files/classifier.pkl", "rb") as archivo2:
     classifier = pickle.load(archivo2)
 
 
